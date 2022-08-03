@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess the number</title>
+  
+
+    
+</head>
+  
+<body>
+<h1>Guess the number from 1 - 100</h1>
+  
+<p>We have selected a random number between 1 - 100. 
+See if you can guess it.</p>
+  
+<div id="container">
+    <label for="guessField">Enter a guess: </label>
+    <input type = "text" id = "guessField" class = "guessField">
+    <input type = "submit" value = "Submit guess" 
+           class = "guessSubmit" id = "submitguess">
+</div>
+  
+<script type = "text/javascript">
+  
+    
+    var y = Math.floor(Math.random() * 100 + 1);
+      
+   
+    var guess = 1;
+      
+    document.getElementById("submitguess").onclick = function(){
+      
+      
+   var x = document.getElementById("guessField").value;
+  
+   if(x == y)
+   {    
+       alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+               + guess + " GUESS ");
+   }
+   else if(x > y)
+   {    
+       guess++;
+       alert("OOPS SORRY!! TRY A SMALLER NUMBER");
+   }
+   else
+   {
+       guess++;
+       alert("OOPS SORRY!! TRY A GREATER NUMBER");
+   }
+}
+</script>
+
+<script src="main.js"></script>
+</body>
+</html>
